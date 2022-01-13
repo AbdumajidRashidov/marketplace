@@ -1,0 +1,46 @@
+.collection{
+    display: flex;
+    flex-wrap: wrap;
+    .left_box{
+        max-width: 49%;
+        margin-right: 5px;
+        img{
+            max-width:100%; 
+            height:auto;
+        }
+    }
+    .right_box{
+        max-width: 50%;
+        img{
+            max-width:48%; 
+            height:auto;
+            margin: 0;
+        }
+        margin-bottom: 140px;
+    }
+}
+@media(max-width:1024px){
+    .collection{
+        .left_box{
+            max-width: 100%;
+            width: 100%;
+            margin-right: 0;
+            img{
+                max-width:100%; 
+                width: 100%;
+                height:auto;
+            }
+        }
+        .right_box{
+            max-width: 100%;
+            width: 100%;
+            img{
+                max-width:50%; 
+                width: 49%;
+                height:auto;
+                margin: 0;
+            }
+            margin-bottom: 40px;
+        }
+    }
+}
