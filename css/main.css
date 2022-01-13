@@ -865,6 +865,14 @@ a {
 .collection .left_box {
   max-width: 49%;
   margin-right: 5px;
+  position: relative;
+}
+
+.collection .left_box:hover .mask {
+  opacity: 0.7;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  visibility: visible;
 }
 
 .collection .left_box img {
@@ -872,9 +880,96 @@ a {
   height: auto;
 }
 
+.collection .left_box .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #333333;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  visibility: hidden;
+}
+
+.collection .left_box .mask .fullscreen {
+  margin: 10px 10px 10px auto;
+}
+
+.collection .left_box .mask .fullscreen a img {
+  width: 30px;
+}
+
+.collection .left_box .mask .bag_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.collection .left_box .mask .bag_box img {
+  width: 64px;
+  height: 54px;
+}
+
+.collection .left_box .mask .bag_box a {
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+  margin-top: 20px;
+  color: #FFFFFF;
+}
+
+.collection .left_box .mask .bag_box a:hover {
+  text-decoration: underline;
+}
+
+.collection .left_box .mask .like_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.collection .left_box .mask .like_box img {
+  cursor: pointer;
+  width: 32px;
+  margin-right: 13px;
+}
+
+.collection .left_box .mask .like_box span {
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+}
+
 .collection .right_box {
   max-width: 50%;
-  margin-bottom: 140px;
 }
 
 .collection .right_box img {
@@ -897,7 +992,6 @@ a {
   .collection .right_box {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 40px;
   }
   .collection .right_box img {
     max-width: 50%;
@@ -918,7 +1012,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 1154px;
-  margin: 0 auto;
+  margin: 140px auto;
 }
 
 .footer .for_costumers, .footer .about_us {
@@ -1005,6 +1099,7 @@ a {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     padding: 0 20px;
+    margin-top: 40px;
   }
   .footer .for_costumers, .footer .about_us {
     width: 50%;

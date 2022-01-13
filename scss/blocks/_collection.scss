@@ -4,9 +4,73 @@
     .left_box{
         max-width: 49%;
         margin-right: 5px;
+        position: relative;
+        &:hover .mask{
+            opacity: 0.7;
+            transition: all 0.3s linear;
+            visibility: visible;
+        }
         img{
             max-width:100%; 
             height:auto;
+        }
+        .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #333333;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            visibility: hidden;
+            .fullscreen{
+                margin: 10px 10px 10px auto;
+                a{
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+            .bag_box{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                img{
+                    width: 64px;
+                    height: 54px;
+                }
+                a{
+                    font-size: 18px;
+                    line-height: 20px;
+                    letter-spacing: 0.04em;
+                    margin-top: 20px;
+                    color: #FFFFFF;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .like_box{
+                display: flex;
+                align-items: center;
+                margin-bottom: 40px;
+                img{
+                    cursor: pointer;
+                    width: 32px;
+                    margin-right: 13px;
+                }
+                span{
+                    font-size: 18px;
+                    line-height: 20px;
+                    letter-spacing: 0.04em;
+                    color: #FFFFFF;
+                }
+            }
         }
     }
     .right_box{
@@ -16,7 +80,6 @@
             height:auto;
             margin: 0;
         }
-        margin-bottom: 140px;
     }
 }
 @media(max-width:1024px){
@@ -40,7 +103,6 @@
                 height:auto;
                 margin: 0;
             }
-            margin-bottom: 40px;
         }
     }
 }

@@ -98,7 +98,8 @@ const header = document.querySelector('.navbar');
 const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
 const containHide = () => header.classList.contains('hide');
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', (e) => {
+    e.preventDefault()
     if(scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
         //scroll down
         header.classList.add('hide');

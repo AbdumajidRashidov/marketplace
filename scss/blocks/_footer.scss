@@ -3,7 +3,7 @@
     align-items: stretch;
     justify-content: space-between;
     max-width: 1154px;
-    margin: 0 auto;
+    margin: 140px auto;
     .for_costumers,.about_us{
         margin-bottom: 28px;
         &__head{
@@ -80,6 +80,7 @@
         display: flex;
         flex-wrap: wrap;
         padding: 0 20px;
+        margin-top: 40px;
         .for_costumers,.about_us{
             width: 50%;
             max-width: 50%;
