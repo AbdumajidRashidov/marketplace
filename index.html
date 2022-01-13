@@ -25,20 +25,20 @@
                         </a>
                     </li>
                     <li class="menu__list-item">
-                        <a href="#favourite" class="menu__link">
+                        <a href="#favourite" class="menu__link" id="favourite_box">
                             <img src="./img/favourite.svg" alt="favourite_icon">
                         </a>
                     </li>
                     <li class="menu__list-item">
-                        <a href="#basket" class="menu__link">
+                        <a href="#basket" class="menu__link" id="basket_box">
                             <img src="./img/basket.svg" alt="basket_icon">
                         </a>
                     </li>
                 </ul>
                 <div class="mobile">
-                    <img class="hamburger" src="./img/Group.svg" alt="hamburger">
-                    <div class="mobile__menu">
-                        <img width="26" height="26" src="./img/close.svg" alt="close_icon">
+                    <img class="hamburger" id="hamburger" src="./img/Group.svg" alt="hamburger">
+                    <div class="mobile__menu" id="mobile__menu">
+                        <img id="closebtn" width="26" height="26" src="./img/close.svg" alt="close_icon">
                         <ul class="mobile__menu__list">
                             <li class="mobile__menu__item">
                                 <a href="#" class="mobile__menu__item__link">постельное белье</a>
@@ -66,25 +66,25 @@
                         <img class="main_img" src="./img/14896420-2 1.png" width="686" alt="product_img">
                         <ul class="product__img-list">
                             <li class="product__img-list__item">
-                                <img width="70" src="./img/14896420-2 2.png" alt="product_img">
+                                <img class="product_img" width="70" src="./img/14896420-2 1.png" alt="product_img">
                             </li>
                             <li class="product__img-list__item">
-                                <img width="70"  src="./img/Group (1).png" alt="product_img">
+                                <img class="product_img" width="70"  src="./img/Group (1).png" alt="product_img">
                             </li>
                             <li class="product__img-list__item">
-                                <img width="70"  src="./img/Group.png" alt="product_img">
+                                <img class="product_img" width="70"  src="./img/Group.png" alt="product_img">
                             </li>
                             <li class="product__img-list__item">
-                                <img width="70"  src="./img/Group (3).png" alt="product_img">
+                                <img class="product_img" width="70"  src="./img/Group (3).png" alt="product_img">
                             </li>
                             <li class="product__img-list__item">
-                                <img width="70"  src="./img/14896420-2 2.png" alt="product_img">
-                            </li>
+                                <img class="product_img" width="70"  src="./img/14896420-2 2.png" alt="product_img">
+                            </li> 
                         </ul>
                     </div>
                     <div class="product__description">
                         <div class="product__description__top">
-                            <h3 class="product__name">
+                            <h3 class="product__name" id="product__name">
                                 Пижама для девочек
                             </h3>
                             <p class="product__code">
@@ -135,13 +135,13 @@
                             <div class="product__counter">
                                 <div class="btngroup">
                                     <span class="count_btns">
-                                        <button class="plus_btn">+</button>
+                                        <button class="plus_btn" id="plus_btn">+</button>
                                         <span class="result">1</span>
-                                        <button class="minus_btn">-</button>
+                                        <button class="minus_btn" id="minus_btn">-</button>
                                     </span>
                                     <div style="display: flex; align-items:center">
-                                        <button class="add_basket_btn">Добавить в корзину</button>
-                                        <button class="add_favourite_btn">
+                                        <button class="add_basket_btn" id="basket_btn">Добавить в корзину</button>
+                                        <button class="add_favourite_btn" id="favourite_btn">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
                                                 <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
@@ -230,13 +230,13 @@
             <p class="contact__head">
                 Узнайте первыми о новинках и акциях
             </p>
-            <form action="">
-                <input type="email" required placeholder="Адрес электронной почты" autocomplete="email"><br>
+            <form id="contact__form" autocomplete="on" action="">
+                <input id="contact" payment="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" type="email" required placeholder="Адрес электронной почты" autocomplete="email"><br>
                 <button class="followbtn" type="submit">Подписаться</button>
             </form>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
