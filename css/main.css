@@ -251,9 +251,19 @@ a {
   padding: 12px 0;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
   left: 0;
-  z-index: 2;
+  top: 0;
+  height: 50px;
+  z-index: 3;
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+
+.navbar.hide {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
 
 .header {
