@@ -1,10 +1,7 @@
 const plusButton = document.getElementById("plus_btn");
 const minusButton = document.getElementById("minus_btn");
 const resultElement = document.querySelector(".result");
-const favouriteButton = document.getElementById("favourite_btn");
-const basketButton = document.getElementById("basket_btn");
-const favouriteElement = document.getElementById("favourite_box");
-const basketElement = document.getElementById("basket_box");
+
 
 // count button
 let productCount=1;
@@ -21,6 +18,10 @@ minusButton.addEventListener("click",()=>{
 })
 
 //add favourite and add basket
+const favouriteButton = document.getElementById("favourite_btn");
+const basketButton = document.getElementById("basket_btn");
+const favouriteElement = document.getElementById("favourite_box");
+const basketElement = document.getElementById("basket_box");
 const notificationBasket = document.createElement("div");
 const notificationFavourite = document.createElement("div");
 const alertMessage = document.createElement("div");
@@ -59,6 +60,38 @@ basketButton.addEventListener("click", addBasket);
 
 favouriteButton.addEventListener("click",addFavourite);
 
+//collection buttons
+const bagButtons = document.getElementsByClassName("bag_btn");
+const likeButtons = document.getElementsByClassName("like_btn");
+const likeCounts = document.getElementsByClassName("like_count");
+
+const redLikeUrl = "../img/redLikebtn.svg";
+const whiteLikeUrl = "../img/like.svg"
+let isRed = false;
+
+count = 0
+
+function changeImg(img,src){
+    return img.src = src;
+}
+
+for(let i=0; i<bagButtons.length; i++){
+    bagButtons[i].addEventListener("click",addBasket)
+}
+
+for(let i=0; i<=likeButtons.length; i++){
+    likeButtons[i].addEventListener("click",()=>{
+        if(isRed){
+            changeImg(likeButtons[i],whiteLikeUrl)
+            isRed = false;
+        }else{
+            addFavourite()
+            changeImg(likeButtons[i],redLikeUrl)
+            isRed = true
+        }
+    })
+    
+}
 
 //mobile menu
 const hamburger = document.getElementById("hamburger")
@@ -67,7 +100,6 @@ const closeButton = document.getElementById("closebtn")
 
 hamburger.addEventListener("click",(e)=>{
     e.preventDefault()
-    // mobileMenu.style.display = "flex"
     mobileMenu.style.opacity = "1"
     mobileMenu.style.visibility = "visible"
 })

@@ -6,19 +6,19 @@
         margin-right: 5px;
         position: relative;
         &:hover .mask{
-            opacity: 0.7;
+            opacity: 1;
             transition: all 0.3s linear;
             visibility: visible;
         }
         img{
             max-width:100%; 
-            height:auto;
+            height:100%;
         }
         .mask{
             position: absolute;
             top: 0;
             left: 0;
-            background: #333333;
+            background: rgba(51,51,51,0.7);
             opacity: 0;
             width: 100%;
             height: 100%;
@@ -32,6 +32,7 @@
                 a{
                     img{
                         width: 30px;
+                        cursor: pointer;
                     }
                 }
             }
@@ -43,6 +44,7 @@
                 img{
                     width: 64px;
                     height: 54px;
+                    cursor: pointer;
                 }
                 a{
                     font-size: 18px;
@@ -75,33 +77,146 @@
     }
     .right_box{
         max-width: 50%;
-        img{
+        display: flex;
+        flex-wrap: wrap;
+        &_item{
             max-width:48%; 
-            height:auto;
-            margin: 0;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            img{
+                height:100%;
+                max-width:100%;
+            }
+            &:hover .mask{
+                opacity: 1;
+                transition: all 0.3s linear;
+                visibility: visible;
+            }
+            .mask{
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(51,51,51,0.7);
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                visibility: hidden;
+                .fullscreen{
+                    margin: 10px 10px 10px auto;
+                    a{
+                        img{
+                            width: 24px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .bag_box{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    img{
+                        width: 32px;
+                        height: 28px;
+                        cursor: pointer;
+                    }
+                    a{
+                        font-size: 14px;
+                        line-height: 20px;
+                        letter-spacing: 0.04em;
+                        margin-top: 10px;
+                        color: #FFFFFF;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .like_box{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    img{
+                        cursor: pointer;
+                        width: 16px;
+                        margin-right: 7px;
+                    }
+                    span{
+                        font-size: 14px;
+                        line-height: 20px;
+                        letter-spacing: 0.04em;
+                        color: #FFFFFF;
+                    }
+                }
+            }
         }
     }
 }
-@media(max-width:1024px){
+@media(max-width:1060px){
     .collection{
+        display: block;
         .left_box{
             max-width: 100%;
-            width: 100%;
-            margin-right: 0;
+            margin: 0;
+           
             img{
-                max-width:100%; 
                 width: 100%;
-                height:auto;
+            }
+            .mask{
+                .fullscreen{
+                    a{
+                        img{
+                            width: 24px;
+                        }
+                    }
+                }
+                .bag_box{
+                    img{
+                        width: 32px;
+                        height: 28px;
+                    }
+                    a{
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+                .like_box{
+                    margin-bottom: 20px;
+                    img{
+                        width: 16px;
+                        margin-right: 7px;
+                    }
+                    span{
+                        font-size: 14px;
+                    }
+                }
             }
         }
         .right_box{
             max-width: 100%;
             width: 100%;
-            img{
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            &_item{
                 max-width:50%; 
-                width: 49%;
-                height:auto;
-                margin: 0;
+                width: 50%;
+                margin-left: 0px;
+                margin-bottom: 10px;
+                img{
+                    height:100%;
+                    max-width:98%;
+                    width: 98%;
+                }
+                .mask{
+                    width: 98%;
+                }
             }
         }
     }

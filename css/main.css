@@ -415,8 +415,6 @@ a {
 .product__img .main_img {
   -webkit-filter: brightness(1);
           filter: brightness(1);
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
 }
 
 .product__img-list {
@@ -869,7 +867,7 @@ a {
 }
 
 .collection .left_box:hover .mask {
-  opacity: 0.7;
+  opacity: 1;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   visibility: visible;
@@ -877,14 +875,14 @@ a {
 
 .collection .left_box img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .collection .left_box .mask {
   position: absolute;
   top: 0;
   left: 0;
-  background: #333333;
+  background: rgba(51, 51, 51, 0.7);
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -910,6 +908,7 @@ a {
 
 .collection .left_box .mask .fullscreen a img {
   width: 30px;
+  cursor: pointer;
 }
 
 .collection .left_box .mask .bag_box {
@@ -931,6 +930,7 @@ a {
 .collection .left_box .mask .bag_box img {
   width: 64px;
   height: 54px;
+  cursor: pointer;
 }
 
 .collection .left_box .mask .bag_box a {
@@ -970,34 +970,180 @@ a {
 
 .collection .right_box {
   max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.collection .right_box img {
+.collection .right_box_item {
   max-width: 48%;
-  height: auto;
-  margin: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 1024px) {
+.collection .right_box_item img {
+  height: 100%;
+  max-width: 100%;
+}
+
+.collection .right_box_item:hover .mask {
+  opacity: 1;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  visibility: visible;
+}
+
+.collection .right_box_item .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(51, 51, 51, 0.7);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  visibility: hidden;
+}
+
+.collection .right_box_item .mask .fullscreen {
+  margin: 10px 10px 10px auto;
+}
+
+.collection .right_box_item .mask .fullscreen a img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.collection .right_box_item .mask .bag_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.collection .right_box_item .mask .bag_box img {
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.collection .right_box_item .mask .bag_box a {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+
+.collection .right_box_item .mask .bag_box a:hover {
+  text-decoration: underline;
+}
+
+.collection .right_box_item .mask .like_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.collection .right_box_item .mask .like_box img {
+  cursor: pointer;
+  width: 16px;
+  margin-right: 7px;
+}
+
+.collection .right_box_item .mask .like_box span {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1060px) {
+  .collection {
+    display: block;
+  }
   .collection .left_box {
     max-width: 100%;
-    width: 100%;
-    margin-right: 0;
+    margin: 0;
   }
   .collection .left_box img {
-    max-width: 100%;
     width: 100%;
-    height: auto;
+  }
+  .collection .left_box .mask .fullscreen a img {
+    width: 24px;
+  }
+  .collection .left_box .mask .bag_box img {
+    width: 32px;
+    height: 28px;
+  }
+  .collection .left_box .mask .bag_box a {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .collection .left_box .mask .like_box {
+    margin-bottom: 20px;
+  }
+  .collection .left_box .mask .like_box img {
+    width: 16px;
+    margin-right: 7px;
+  }
+  .collection .left_box .mask .like_box span {
+    font-size: 14px;
   }
   .collection .right_box {
     max-width: 100%;
     width: 100%;
-  }
-  .collection .right_box img {
-    max-width: 50%;
-    width: 49%;
-    height: auto;
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .collection .right_box_item {
+    max-width: 50%;
+    width: 50%;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+  .collection .right_box_item img {
+    height: 100%;
+    max-width: 98%;
+    width: 98%;
+  }
+  .collection .right_box_item .mask {
+    width: 98%;
   }
 }
 
