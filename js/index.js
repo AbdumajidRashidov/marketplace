@@ -79,7 +79,7 @@ for(let i=0; i<bagButtons.length; i++){
     bagButtons[i].addEventListener("click",addBasket)
 }
 
-for(let i=0; i<=likeButtons.length; i++){
+for(let i=0; i<likeButtons.length; i++){
     likeButtons[i].addEventListener("click",()=>{
         if(isRed){
             changeImg(likeButtons[i],whiteLikeUrl)
@@ -116,8 +116,7 @@ const mainImg = document.querySelector(".main_img")
 const productImg = document.querySelectorAll(".product_img")
 
 productImg.forEach((item)=>{
-    item.addEventListener("click",(e)=>{
-        e.preventDefault()
+    item.addEventListener("click",()=>{
         mainImg.src = item.src;
     })
 })
